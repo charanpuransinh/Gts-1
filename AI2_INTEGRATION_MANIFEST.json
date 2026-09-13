@@ -1,0 +1,27 @@
+{
+  "system": "GTS",
+  "stage": "AI-2 integration preparation",
+  "sources": {
+    "GTS_V2.zip": {
+      "sha256": "1fe26cbb93e2ff46f97218c1f7f2d6da07447f9c3aef98f7bdede6a97ebdba65",
+      "role": "canonical tested V2 Expiry Specialist / Options Intelligence"
+    },
+    "GTS_02_instruments.zip": {
+      "sha256": "7c52c8c34ceb922f407d955f1efa3374711204c2be92525ce39bab395f2a7913",
+      "role": "AI-2 Instruments"
+    }
+  },
+  "placement": {
+    "02_instruments": "Instrument/Contract/Expiry identity",
+    "04_indicators": "Limited indicators supplied by V2",
+    "06_options_engine": "V2 Options + Expiry Specialist"
+  },
+  "generated_only": [
+    "02_instruments/__init__.py",
+    "06_options_engine/instrument_wiring.py",
+    "29_docs/AI2_LIVE_WIRING_BLUEPRINT.md",
+    "28_tests/test_ai2_v2_wiring.py",
+    "AI2_INTEGRATION_MANIFEST.json"
+  ],
+  "preserve_sources": true
+}
