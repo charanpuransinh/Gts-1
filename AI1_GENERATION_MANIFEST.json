@@ -1,0 +1,133 @@
+{
+  "system": "GTS",
+  "stage": "AI-1",
+  "original_ai1_sha256": "c7943f100dafa23197d2fc188f92cc4e41ab5bb6685a4784b11bb633c4146889",
+  "file_count": 25,
+  "files": [
+    {
+      "path": "01_market_data/data_normalizer.py",
+      "bytes": 5268,
+      "sha256": "70169f82bdfe43d8dc2703c75cacd5680798966e56edf33ed5070d443f4dda84"
+    },
+    {
+      "path": "01_market_data/historical_data_fetcher.py",
+      "bytes": 4468,
+      "sha256": "409af36d10a93e55a9a8ce56f6e3fa72215bc32444abab6e7d0f4a7d79c96b67"
+    },
+    {
+      "path": "01_market_data/market_data_cache.py",
+      "bytes": 3286,
+      "sha256": "5169991fb22e8a1ac3edfac81b60d1cf2efc4879510ab8769b5a4001ad337a95"
+    },
+    {
+      "path": "01_market_data/market_data_feed.py",
+      "bytes": 6641,
+      "sha256": "c8934eda84961bee872855e5627493b303d9f018b54e92b2250a84a9826e8fd4"
+    },
+    {
+      "path": "01_market_data/market_data_types.py",
+      "bytes": 2987,
+      "sha256": "89e577957f9429703daf1440f431b8f9664430ec53733d5d9a3993b007c51da8"
+    },
+    {
+      "path": "01_market_data/tests/test_data_normalizer.py",
+      "bytes": 1928,
+      "sha256": "3ce31a20270ccb5becf39a1c9b7d9a8480110c07e7a6f170e003f5631b64578c"
+    },
+    {
+      "path": "01_market_data/tests/test_historical_and_cache.py",
+      "bytes": 2287,
+      "sha256": "a4d62065ef4d6a6c00eb8275b7549810e4578103eb07d2738026d582fe5e612c"
+    },
+    {
+      "path": "01_market_data/tests/test_market_data_feed.py",
+      "bytes": 1895,
+      "sha256": "cd7f235816bd44e1e0c78fe5046ee17355264543619870a8c8eb5043e1e65ccd"
+    },
+    {
+      "path": "20_dashboard/app.js",
+      "bytes": 924,
+      "sha256": "d1689f499090802162be1f4f8eb2d6ca7d8c8cd4d3f603c4358dd79da1f7f9ff"
+    },
+    {
+      "path": "20_dashboard/index.html",
+      "bytes": 477,
+      "sha256": "b8d3cd55f11ea7daf71b41f638f30f248291a692148eb7a1f9b46009421e3763"
+    },
+    {
+      "path": "20_dashboard/styles.css",
+      "bytes": 243,
+      "sha256": "cac09d7c5aae26d4bc32994ab69c909b0e480b2289b17d2bb7d2dfd4b23d3e67"
+    },
+    {
+      "path": "23_database/db_manager.py",
+      "bytes": 840,
+      "sha256": "c00f645b30f0d91af28a6eae07b170430dcaaf61722503c65832906ed956db9a"
+    },
+    {
+      "path": "23_database/schema_manager.py",
+      "bytes": 504,
+      "sha256": "dcb5449739e4eb19197919d5b1b67a60801b1560e3e8202d5e1d112d0394dd8e"
+    },
+    {
+      "path": "24_api/api_router.py",
+      "bytes": 2079,
+      "sha256": "6cb4d4b8ac4272c5c2ce2e6e3f4231a4ccf09e1cbd66fffba9fd62ff2e85dc56"
+    },
+    {
+      "path": "24_api/api_server.py",
+      "bytes": 904,
+      "sha256": "8f5fb51126fb7e373d28d14dac0a72b445cd84a7349858df23a1fab6961d49a8"
+    },
+    {
+      "path": "27_system/audit_logger.py",
+      "bytes": 515,
+      "sha256": "f6d63add6bee67563577b56d83b5965da762aad74167f0ea412dbdbff7b82aaa"
+    },
+    {
+      "path": "27_system/config_manager.py",
+      "bytes": 551,
+      "sha256": "ee738a14b2f183f7d3c3328ffc60f5afa773d8173d51da2da1c6bebe6f36d265"
+    },
+    {
+      "path": "27_system/health_monitor.py",
+      "bytes": 643,
+      "sha256": "b3521cd6abf8756c344a21da83feb583a0ab4c9c51b8981d68ed877c724ac7d0"
+    },
+    {
+      "path": "28_tests/test_ai1_integration.py",
+      "bytes": 1530,
+      "sha256": "cdfab68b58a3cfff9a3315be4787d38d5f24cd81ba3195e5744f9b8d4a86f049"
+    },
+    {
+      "path": "29_docs/architecture_contract.md",
+      "bytes": 299,
+      "sha256": "eb13571fc3320b3ff08fa486f81ef5bcf9fe6fcef505950f53e55b22e0f83303"
+    },
+    {
+      "path": "29_docs/file_registry.md",
+      "bytes": 304,
+      "sha256": "7472cfa8ae1b28ab995ae4ade4e4589f2c788c2e2a491c90b4afe320553e9278"
+    },
+    {
+      "path": "29_docs/interface_contract.md",
+      "bytes": 275,
+      "sha256": "0c7ae205db2e8851c07d41f0d9c2b125b7509e36b6c720aec572595762ae6605"
+    },
+    {
+      "path": "29_docs/wiring_map.md",
+      "bytes": 493,
+      "sha256": "258a642c6d9335c2280af2e4b9ee9d18cda98c7bf01df5ca20927b7adf9f720b"
+    },
+    {
+      "path": "run_ai1_tests.py",
+      "bytes": 1043,
+      "sha256": "70edd9a1e77af0587a10a6a65b7a246b1917f989760e68c2dc911c0f5f223570"
+    },
+    {
+      "path": "uploads/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
