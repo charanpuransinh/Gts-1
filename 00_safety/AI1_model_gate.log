@@ -1,0 +1,66 @@
+=== GTS UNIVERSAL MODEL PASS GATE ===
+2026-09-13T15:40:10+02:00
+ROOT=/opt/gts-1
+STAGE=AI-1
+MANIFEST=/opt/gts-1/00_safety/stage_manifests/AI-1.conf
+
+=== ACCUMULATED STACK CHECK (requires: <none, root stage>) ===
+
+=== CURRENT STAGE CHECK (AI-1) ===
+--- CUR_AI1_UNIT: 01_market_data/tests ---
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /opt/gts-1
+collecting ... collected 19 items
+
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_standard_fields PASSED [  5%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_alternate_field_names PASSED [ 10%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_missing_symbol_raises PASSED [ 15%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_negative_price_raises PASSED [ 21%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_bar_valid PASSED [ 26%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_bar_high_low_inverted_raises PASSED [ 31%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_option_quote_call_put_aliases PASSED [ 36%]
+01_market_data/tests/test_historical_and_cache.py::test_synthesized_bars_are_valid_and_ordered PASSED [ 42%]
+01_market_data/tests/test_historical_and_cache.py::test_fetch_bars_validated_rejects_bad_range PASSED [ 47%]
+01_market_data/tests/test_historical_and_cache.py::test_load_bars_returns_preloaded_data PASSED [ 52%]
+01_market_data/tests/test_historical_and_cache.py::test_cache_ltp_lookup PASSED [ 57%]
+01_market_data/tests/test_historical_and_cache.py::test_cache_bar_window PASSED [ 63%]
+01_market_data/tests/test_historical_and_cache.py::test_cache_staleness PASSED [ 68%]
+01_market_data/tests/test_market_data_feed.py::test_connect_sets_status_connected PASSED [ 73%]
+01_market_data/tests/test_market_data_feed.py::test_subscribe_and_pump_dispatches_tick PASSED [ 78%]
+01_market_data/tests/test_market_data_feed.py::test_pump_unsubscribed_symbol_raises PASSED [ 84%]
+01_market_data/tests/test_market_data_feed.py::test_unsubscribe_removes_symbol PASSED [ 89%]
+01_market_data/tests/test_market_data_feed.py::test_stale_detection PASSED [ 94%]
+01_market_data/tests/test_market_data_feed.py::test_quote_has_valid_spread PASSED [100%]
+
+============================== 19 passed in 0.09s ==============================
+CUR_AI1_UNIT_EXIT(01_market_data/tests)=0
+--- CUR_AI1_INTEGRATION: 28_tests ---
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /opt/gts-1
+collecting ... collected 4 items
+
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_health PASSED [ 25%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_tick PASSED [ 50%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_database_schema PASSED [ 75%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_market_cache PASSED [100%]
+
+============================== 4 passed in 0.04s ===============================
+CUR_AI1_INTEGRATION_EXIT(28_tests)=0
+CUR_AI1_COMPILE_COMPILE_EXIT=0
+CUR_AI1_SCOPE_FORBIDDEN_STAGE_MATCH: none
+CUR_AI1_SCOPE_FORBIDDEN_FILENAME_MATCH: none
+CUR_AI1_SCOPE_SCOPE_EXIT=0
+PASS: current stage AI-1 checks passed
+
+=== REPOSITORY STATUS (informational only, does not gate PASS/FAIL) ===
+?? 00_safety/AI1_model_gate.log
+?? 00_safety/MODEL_GATE.sh
+?? 00_safety/MODEL_GATE_README.md
+?? 00_safety/stage_manifests/
+
+=== RESULT ===
+VERIFIED: AI-1 accumulated verification PASSED.
