@@ -23,6 +23,26 @@ find "$ROOT/uploads" -type f -print | sort
 echo "=== SHA256 ==="
 find "$ROOT/uploads" -type f -print0 | sort -z | xargs -0 -r sha256sum
 
+echo "=== AI-1 ORIGINAL TESTS (01_market_data/tests) ==="
+set +e
+python3 -m pytest "$ROOT/01_market_data/tests" -v
+UNIT_EXIT=$?
+set -e
+echo "UNIT_TEST_EXIT=$UNIT_EXIT"
+
+echo "=== AI-1 INTEGRATION TESTS (28_tests) ==="
+set +e
+python3 -m pytest "$ROOT/28_tests" -v
+INTEGRATION_EXIT=$?
+set -e
+echo "INTEGRATION_TEST_EXIT=$INTEGRATION_EXIT"
+
 echo "=== RESULT ==="
-echo "NOT VERIFIED: AI-1 has not yet been uploaded/tested."
-exit 1
+if [ "$UNIT_EXIT" -eq 0 ] && [ "$INTEGRATION_EXIT" -eq 0 ]; then
+  echo "VERIFIED: AI-1 original tests and integration tests passed."
+  touch "$LOCK"
+  exit 0
+else
+  echo "NOT VERIFIED: AI-1 tests failed (unit_exit=$UNIT_EXIT integration_exit=$INTEGRATION_EXIT)."
+  exit 1
+fi
