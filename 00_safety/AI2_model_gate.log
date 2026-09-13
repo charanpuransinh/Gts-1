@@ -1,0 +1,129 @@
+=== GTS UNIVERSAL MODEL PASS GATE ===
+2026-09-13T16:15:29+02:00
+ROOT=/opt/gts-1
+STAGE=AI-2
+MANIFEST=/opt/gts-1/00_safety/stage_manifests/AI-2.conf
+
+=== ACCUMULATED STACK CHECK (requires: AI-1) ===
+--- prerequisite: AI-1 ---
+PASS lock present: /opt/gts-1/00_safety/AI1_MODEL_PASS.lock
+Re-verifying accumulated tests for AI-1 ...
+--- PRIOR_AI1_UNIT: 01_market_data/tests ---
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /opt/gts-1
+collecting ... collected 19 items
+
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_standard_fields PASSED [  5%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_alternate_field_names PASSED [ 10%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_missing_symbol_raises PASSED [ 15%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_tick_negative_price_raises PASSED [ 21%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_bar_valid PASSED [ 26%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_bar_high_low_inverted_raises PASSED [ 31%]
+01_market_data/tests/test_data_normalizer.py::test_normalize_option_quote_call_put_aliases PASSED [ 36%]
+01_market_data/tests/test_historical_and_cache.py::test_synthesized_bars_are_valid_and_ordered PASSED [ 42%]
+01_market_data/tests/test_historical_and_cache.py::test_fetch_bars_validated_rejects_bad_range PASSED [ 47%]
+01_market_data/tests/test_historical_and_cache.py::test_load_bars_returns_preloaded_data PASSED [ 52%]
+01_market_data/tests/test_historical_and_cache.py::test_cache_ltp_lookup PASSED [ 57%]
+01_market_data/tests/test_historical_and_cache.py::test_cache_bar_window PASSED [ 63%]
+01_market_data/tests/test_historical_and_cache.py::test_cache_staleness PASSED [ 68%]
+01_market_data/tests/test_market_data_feed.py::test_connect_sets_status_connected PASSED [ 73%]
+01_market_data/tests/test_market_data_feed.py::test_subscribe_and_pump_dispatches_tick PASSED [ 78%]
+01_market_data/tests/test_market_data_feed.py::test_pump_unsubscribed_symbol_raises PASSED [ 84%]
+01_market_data/tests/test_market_data_feed.py::test_unsubscribe_removes_symbol PASSED [ 89%]
+01_market_data/tests/test_market_data_feed.py::test_stale_detection PASSED [ 94%]
+01_market_data/tests/test_market_data_feed.py::test_quote_has_valid_spread PASSED [100%]
+
+============================== 19 passed in 0.09s ==============================
+PRIOR_AI1_UNIT_EXIT(01_market_data/tests)=0
+--- PRIOR_AI1_INTEGRATION: 28_tests ---
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /opt/gts-1
+collecting ... collected 9 items
+
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_health PASSED [ 11%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_tick PASSED [ 22%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_database_schema PASSED [ 33%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_market_cache PASSED [ 44%]
+28_tests/test_ai2_v2_wiring.py::test_ai2_instruments_imports PASSED      [ 55%]
+28_tests/test_ai2_v2_wiring.py::test_v2_options_files_exist PASSED       [ 66%]
+28_tests/test_ai2_v2_wiring.py::test_v2_options_source_is_syntax_valid PASSED [ 77%]
+28_tests/test_ai2_v2_wiring.py::test_v2_indicator_source_is_syntax_valid PASSED [ 88%]
+28_tests/test_ai2_v2_wiring.py::test_expiry_wiring_is_dependency_safe PASSED [100%]
+
+============================== 9 passed in 0.18s ===============================
+PRIOR_AI1_INTEGRATION_EXIT(28_tests)=0
+PRIOR_AI1_COMPILE_COMPILE_EXIT=0
+PRIOR_AI1_SCOPE_FORBIDDEN_STAGE_MATCH: none
+PRIOR_AI1_SCOPE_FORBIDDEN_FILENAME_MATCH: none
+PRIOR_AI1_SCOPE_SCOPE_EXIT=0
+PASS: prerequisite stage AI-1 accumulated checks re-verified
+
+=== CURRENT STAGE CHECK (AI-2) ===
+--- CUR_AI2_UNIT: 02_instruments/tests ---
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /opt/gts-1
+collecting ... collected 24 items
+
+02_instruments/tests/test_contract_builder.py::test_build_option_valid_strike PASSED [  4%]
+02_instruments/tests/test_contract_builder.py::test_build_option_normalizes_call_put_alias PASSED [  8%]
+02_instruments/tests/test_contract_builder.py::test_build_option_invalid_strike_step_raises PASSED [ 12%]
+02_instruments/tests/test_contract_builder.py::test_build_option_non_optionable_underlying_raises PASSED [ 16%]
+02_instruments/tests/test_contract_builder.py::test_build_option_unknown_underlying_raises PASSED [ 20%]
+02_instruments/tests/test_contract_builder.py::test_build_option_bad_expiry_format_raises PASSED [ 25%]
+02_instruments/tests/test_contract_builder.py::test_build_future_valid PASSED [ 29%]
+02_instruments/tests/test_contract_builder.py::test_build_future_no_expiry_cycle_raises PASSED [ 33%]
+02_instruments/tests/test_contract_builder.py::test_trading_symbol_format PASSED [ 37%]
+02_instruments/tests/test_expiry_calendar.py::test_weekly_expiry_lands_on_thursday PASSED [ 41%]
+02_instruments/tests/test_expiry_calendar.py::test_weekly_expiry_when_ref_is_the_expiry_day PASSED [ 45%]
+02_instruments/tests/test_expiry_calendar.py::test_monthly_expiry_is_last_thursday_of_month PASSED [ 50%]
+02_instruments/tests/test_expiry_calendar.py::test_monthly_expiry_rolls_to_next_month_if_past PASSED [ 54%]
+02_instruments/tests/test_expiry_calendar.py::test_holiday_adjustment_rolls_back PASSED [ 58%]
+02_instruments/tests/test_expiry_calendar.py::test_expiry_series_ascending_and_correct_count PASSED [ 62%]
+02_instruments/tests/test_expiry_calendar.py::test_days_to_expiry PASSED [ 66%]
+02_instruments/tests/test_instrument_master.py::test_register_and_get PASSED [ 70%]
+02_instruments/tests/test_instrument_master.py::test_get_unknown_raises PASSED [ 75%]
+02_instruments/tests/test_instrument_master.py::test_default_master_has_expected_symbols PASSED [ 79%]
+02_instruments/tests/test_instrument_master.py::test_default_master_no_symbol_collision PASSED [ 83%]
+02_instruments/tests/test_instrument_master.py::test_find_by_segment PASSED [ 87%]
+02_instruments/tests/test_instrument_master.py::test_round_to_tick PASSED [ 91%]
+02_instruments/tests/test_instrument_master.py::test_is_valid_lots PASSED [ 95%]
+02_instruments/tests/test_instrument_master.py::test_deactivate_removes_from_tradable PASSED [100%]
+
+============================== 24 passed in 0.03s ==============================
+CUR_AI2_UNIT_EXIT(02_instruments/tests)=0
+--- CUR_AI2_INTEGRATION: 28_tests/test_ai2_v2_wiring.py ---
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /opt/gts-1
+collecting ... collected 5 items
+
+28_tests/test_ai2_v2_wiring.py::test_ai2_instruments_imports PASSED      [ 20%]
+28_tests/test_ai2_v2_wiring.py::test_v2_options_files_exist PASSED       [ 40%]
+28_tests/test_ai2_v2_wiring.py::test_v2_options_source_is_syntax_valid PASSED [ 60%]
+28_tests/test_ai2_v2_wiring.py::test_v2_indicator_source_is_syntax_valid PASSED [ 80%]
+28_tests/test_ai2_v2_wiring.py::test_expiry_wiring_is_dependency_safe PASSED [100%]
+
+============================== 5 passed in 0.04s ===============================
+CUR_AI2_INTEGRATION_EXIT(28_tests/test_ai2_v2_wiring.py)=0
+CUR_AI2_COMPILE_COMPILE_EXIT=0
+CUR_AI2_SCOPE_FORBIDDEN_STAGE_MATCH: none
+CUR_AI2_SCOPE_FORBIDDEN_FILENAME_MATCH: none
+CUR_AI2_SCOPE_SCOPE_EXIT=0
+PASS: current stage AI-2 checks passed
+
+=== REPOSITORY STATUS (informational only, does not gate PASS/FAIL) ===
+ M 00_safety/AI1_MODEL_PASS.lock
+ M 00_safety/AI1_model_gate.log
+ M 00_safety/verification.log
+?? 00_safety/AI2_model_gate.log
+?? 00_safety/stage_manifests/AI-2.conf
+
+=== RESULT ===
+VERIFIED: AI-2 accumulated verification PASSED.

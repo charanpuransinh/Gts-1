@@ -1,5 +1,5 @@
 === GTS UNIVERSAL MODEL PASS GATE ===
-2026-09-13T15:40:10+02:00
+2026-09-13T16:15:24+02:00
 ROOT=/opt/gts-1
 STAGE=AI-1
 MANIFEST=/opt/gts-1/00_safety/stage_manifests/AI-1.conf
@@ -34,21 +34,26 @@ collecting ... collected 19 items
 01_market_data/tests/test_market_data_feed.py::test_stale_detection PASSED [ 94%]
 01_market_data/tests/test_market_data_feed.py::test_quote_has_valid_spread PASSED [100%]
 
-============================== 19 passed in 0.09s ==============================
+============================== 19 passed in 0.13s ==============================
 CUR_AI1_UNIT_EXIT(01_market_data/tests)=0
 --- CUR_AI1_INTEGRATION: 28_tests ---
 ============================= test session starts ==============================
 platform linux -- Python 3.12.3, pytest-7.4.4, pluggy-1.4.0 -- /usr/bin/python3
 cachedir: .pytest_cache
 rootdir: /opt/gts-1
-collecting ... collected 4 items
+collecting ... collected 9 items
 
-28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_health PASSED [ 25%]
-28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_tick PASSED [ 50%]
-28_tests/test_ai1_integration.py::AI1IntegrationTests::test_database_schema PASSED [ 75%]
-28_tests/test_ai1_integration.py::AI1IntegrationTests::test_market_cache PASSED [100%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_health PASSED [ 11%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_api_tick PASSED [ 22%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_database_schema PASSED [ 33%]
+28_tests/test_ai1_integration.py::AI1IntegrationTests::test_market_cache PASSED [ 44%]
+28_tests/test_ai2_v2_wiring.py::test_ai2_instruments_imports PASSED      [ 55%]
+28_tests/test_ai2_v2_wiring.py::test_v2_options_files_exist PASSED       [ 66%]
+28_tests/test_ai2_v2_wiring.py::test_v2_options_source_is_syntax_valid PASSED [ 77%]
+28_tests/test_ai2_v2_wiring.py::test_v2_indicator_source_is_syntax_valid PASSED [ 88%]
+28_tests/test_ai2_v2_wiring.py::test_expiry_wiring_is_dependency_safe PASSED [100%]
 
-============================== 4 passed in 0.04s ===============================
+============================== 9 passed in 0.23s ===============================
 CUR_AI1_INTEGRATION_EXIT(28_tests)=0
 CUR_AI1_COMPILE_COMPILE_EXIT=0
 CUR_AI1_SCOPE_FORBIDDEN_STAGE_MATCH: none
@@ -57,10 +62,10 @@ CUR_AI1_SCOPE_SCOPE_EXIT=0
 PASS: current stage AI-1 checks passed
 
 === REPOSITORY STATUS (informational only, does not gate PASS/FAIL) ===
-?? 00_safety/AI1_model_gate.log
-?? 00_safety/MODEL_GATE.sh
-?? 00_safety/MODEL_GATE_README.md
-?? 00_safety/stage_manifests/
+ D 00_safety/AI1_MODEL_PASS.lock
+ M 00_safety/AI1_model_gate.log
+ M 00_safety/verification.log
+?? 00_safety/stage_manifests/AI-2.conf
 
 === RESULT ===
 VERIFIED: AI-1 accumulated verification PASSED.
